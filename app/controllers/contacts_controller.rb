@@ -8,7 +8,7 @@ class ContactsController < ApplicationController
         if @contact.save 
             flash[:success] = "mensaje enviao"
         else 
-            flash[:error] = 'ocurrio un error'
+            flash[:danger] = 'ocurrio un error'
            
         end
     end
