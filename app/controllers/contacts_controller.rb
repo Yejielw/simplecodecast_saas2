@@ -7,11 +7,14 @@ class ContactsController < ApplicationController
        
         if @contact.save 
             flash[:success] = "mensaje enviao"
+            redirect_to new_contact_path
         else 
-            flash[:danger] = 'ocurrio un error'
+            flash[:danger] = "ocurrio un error"
+             redirect_to new_contact_path
            
         end
     end
+      
     private 
         def contact_params
            params.require(:contact).permit(:name, :email, :comments) 
